@@ -10,20 +10,44 @@
 }
 
 .container() {
-  max-width: 800px;
+  max-width: 50%;
   width: 100%;
+  transition: .2s ease-in-out max-width;
+
+  @media @tablet {
+    max-width: 80%;
+  }
 
   @media @mobile {
-      width: 90%;
+    max-width: 90%;
   }
 }
 
-.button(@color-bg, @color-text, @font-size, @border-radius){
-    background-color: @color-bg;
-    color: @color-text;
-    font-size: @font-size;
-    border-radius: @border-radius;
-    padding: 10px 20px;
-    text-align: center;
-    margin: 0 2%;
+.button(@color-bg, @color-text, @font-size, @border-radius) {
+  background-color: @color-bg;
+  color: @color-text;
+  font-size: @font-size;
+  border-radius: @border-radius;
+  padding: 10px 20px;
+  text-align: center;
+  margin: 0 2%;
+}
+
+.fadeIn(@start, @duration) {
+  animation: fadeIn @duration forwards;
+
+  @keyframes fadeIn {
+    from {
+      opacity: @start;
+      filter: grayscale(100%);
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    to {
+      filter: grayscale(0%);
+    }
+  }
 }

@@ -167,13 +167,32 @@ img {
   height: auto;
 }
 .container {
-  max-width: 800px;
+  max-width: 50%;
   width: 100%;
+  transition: 0.2s ease-in-out max-width;
   margin: 0 auto;
+  animation: fadeIn 3s forwards;
+}
+@media (max-width: 1000px) {
+  .container {
+    max-width: 80%;
+  }
 }
 @media (max-width: 500px) {
   .container {
-    width: 90%;
+    max-width: 90%;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    filter: grayscale(100%);
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    filter: grayscale(0%);
   }
 }
 .nav {
@@ -185,18 +204,42 @@ img {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  max-width: 800px;
+  max-width: 50%;
   width: 100%;
+  transition: 0.2s ease-in-out max-width;
   margin: 0 auto;
+  animation: fadeIn 3s forwards;
 }
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
   .nav .nav-wrapper {
-    width: 90%;
+    max-width: 80%;
   }
 }
 @media (max-width: 500px) {
   .nav .nav-wrapper {
-    width: 90%;
+    max-width: 90%;
+  }
+}
+@media (max-width: 1000px) {
+  .nav .nav-wrapper {
+    max-width: 80%;
+  }
+}
+@media (max-width: 500px) {
+  .nav .nav-wrapper {
+    max-width: 90%;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    filter: grayscale(100%);
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    filter: grayscale(0%);
   }
 }
 .nav .nav-wrapper nav {
@@ -239,6 +282,7 @@ img {
 }
 .home .header img {
   margin-bottom: 20px;
+  width: 100%;
 }
 .home .header p {
   margin-bottom: 10px;
@@ -303,6 +347,7 @@ img {
 }
 .home .content-destination img {
   border-radius: 10px;
+  width: 100%;
 }
 @media (max-width: 500px) {
   .home .content-destination {
