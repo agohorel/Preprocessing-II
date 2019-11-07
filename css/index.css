@@ -300,6 +300,10 @@ img {
 .home .content-section .img-content {
   width: 48%;
   padding-left: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .home .content-section .img-content img {
   border-radius: 10px;
