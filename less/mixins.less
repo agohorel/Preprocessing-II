@@ -12,6 +12,10 @@
 .container() {
   max-width: 800px;
   width: 100%;
+
+  @media @mobile {
+      width: 90%;
+  }
 }
 
 .button(@color-bg, @color-text, @font-size, @border-radius){
