@@ -1,1 +1,53 @@
-// Mixins in here
+.flex(@direction, @justify, @align) {
+  display: flex;
+  flex-direction: @direction;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+.border-bottom {
+  border-bottom: 2px dashed @silver;
+}
+
+.container() {
+  max-width: 50%;
+  width: 100%;
+  transition: .2s ease-in-out max-width;
+
+  @media @tablet {
+    max-width: 80%;
+  }
+
+  @media @mobile {
+    max-width: 90%;
+  }
+}
+
+.button(@color-bg, @color-text, @font-size, @border-radius) {
+  background-color: @color-bg;
+  color: @color-text;
+  font-size: @font-size;
+  border-radius: @border-radius;
+  padding: 10px 20px;
+  text-align: center;
+  margin: 0 2%;
+}
+
+.fadeIn(@start, @duration) {
+  animation: fadeIn @duration forwards;
+
+  @keyframes fadeIn {
+    from {
+      opacity: @start;
+      filter: grayscale(100%);
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    to {
+      filter: grayscale(0%);
+    }
+  }
+}
